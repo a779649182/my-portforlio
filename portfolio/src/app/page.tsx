@@ -1,9 +1,14 @@
 import React from "react";
-import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
 
 const HomePage = () => {
     return (
         <div>
+            <div className="container">
+                <HeroSection />
+            </div>
+            
+
 
         </div>
     );
