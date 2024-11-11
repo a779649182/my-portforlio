@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        teal: "#38A3A5"
+        teal: "#2fcab0"
       },
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
