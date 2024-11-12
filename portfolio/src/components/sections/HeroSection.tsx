@@ -1,4 +1,6 @@
-import avatar from "../../../public/picture.jpg";
+import avatar from "@/../public/picture.jpg";
+import githubIcon from "@/../public/github-mark.svg";
+import linkedInIcon from "@/../public/linkedin.svg";
 import React from "react";
 import { Spotlight } from "../ui/Spotlight";
 import Image from "next/image";
@@ -8,8 +10,8 @@ import { StarsBackground } from "../ui/StarBackground";
 const HeroSection = () => {
     return (
         <div className="container relative z-0 mx-auto h-[90vh]">
-            <section className="h-full w-full flex flex-col mx-auto">
-                <div className="inline-flex mx-auto mt-10 ">
+            <div className="h-full w-full flex flex-col mx-auto">
+                <div className="inline-flex mx-auto mt-20 ">
                     <Image
                         className="rounded-lg fade-in"
                         src={avatar}
@@ -34,26 +36,32 @@ const HeroSection = () => {
                         applications and always eager to learn and grow in the
                         tech industry.
                     </p>
-                </div>                
-                <button className="text-gray-400">github</button>
-                <button className="text-gray-400">linkedin</button>
-                <button className="text-gray-400">download resume</button>
-                <button className="text-gray-400">download resume</button>
-            </section>
+                </div>
+                <div className=" grid justify-center w-[50%] mx-auto mt-10 grid-cols-2 gap-5 ">
+                    <button className="flex justify-center">
+                        <Image className="filter hover:contrast-0" src={githubIcon} width={50} />
+                    </button>
+                    <button className="flex justify-center">
+                        <Image className="filter contrast-75 hover:contrast-0" src={linkedInIcon} width={50} />
+                    </button>
+                    <button className="text-gray-400 ">download resume</button>
+                    <button className="p-[3px] relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-teal to-green-600 rounded-lg" />
+                        <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200  text-white hover:bg-transparent">
+                            Check out my projects
+                        </div>
+                    </button>
+                </div>
+            </div>
 
-            <Spotlight
-                className="-top-30 left-0 md:left-60 md:-top-20 h-full"
-                fill="white"
+            <ShootingStars
+                maxSpeed={5}
+                maxDelay={5000}
+                starWidth={20}
+                starHeight={5}
+                className="-z-10"
             />
-
-                <ShootingStars
-                    maxSpeed={5}
-                    maxDelay={5000}
-                    starWidth={20}
-                    starHeight={5}
-                />
-                <StarsBackground />
-
+            <StarsBackground className="-z-10" />
         </div>
     );
 };
